@@ -1,0 +1,36 @@
+<div class="conteiner m-5">
+  <div class="row">
+    <div class="col-lg-6 offset-lg-3">
+      <div class="card">
+        <div class="card-body text-center">
+          <h3>Drag and drop</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">    
+    <div class="col-lg-6 offset-lg-3 mt-4">
+        <input type="text" [(ngModel)]="tarea" (keyup.enter)="agregarTarea()" class="form-control form-control-lg text-center" placeholder="Task">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-4">
+        <div cdkDropList class="example-list m-2" id="list-todo" [cdkDropListData]="todo" [cdkDropListConnectedTo]="['list-progress']" (cdkDropListDropped)="drop($event)">
+            <h3 class="text-center bg-danger bg-gradient bg-opacity-50">Todo</h3>
+            <div class="example-box" *ngFor="let items of todo" cdkDrag>{{ items }}</div>
+      </div>
+    </div>
+    <div class="col-lg-4">
+        <div cdkDropList class="example-list m-2" id="list-progress" [cdkDropListData]="progress" [cdkDropListConnectedTo]="['list-todo', 'list-done']" (cdkDropListDropped)="drop($event)">
+            <h3 class="text-center bg-warning bg-gradient bg-opacity-50">In progress</h3> 
+            <div class="example-box" *ngFor="let items of progress" cdkDrag>{{ items }}</div>
+      </div>
+    </div>
+    <div class="col-lg-4">
+      <div cdkDropList class="example-list m-2" id="list-done" [cdkDropListData]="done" [cdkDropListConnectedTo]="['list-progress']" (cdkDropListDropped)="drop($event)">
+            <h3 class="text-center bg-success bg-gradient bg-opacity-50">Done</h3>
+            <div class="example-box" *ngFor="let items of done" cdkDrag>{{ items }}</div>
+      </div>
+    </div>
+  </div>
+</div>

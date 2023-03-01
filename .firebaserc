@@ -1,0 +1,16 @@
+{
+  "projects": {
+    "default": "appangular-513d0",
+    "appangular": "appangular-513d0"
+  },
+  "targets": {
+    "angular-822c6": {
+      "hosting": {
+        "app": [
+          "angular-822c6"
+        ]
+      }
+    }
+  },
+  "etags": {}
+}

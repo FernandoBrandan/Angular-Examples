@@ -1,0 +1,8 @@
+cdk-virtual-scroll-viewport {
+    height: 175px;
+}
+
+.card{
+    background-color: slategray;
+    color: aliceblue;
+}
